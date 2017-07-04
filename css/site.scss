@@ -1,0 +1,141 @@
+---
+---
+
+// ######
+// MIXINS
+// ######
+
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -o-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin text-shadow($shadow) {
+    -moz-text-shadow: $shadow;
+    -webkit-text-shadow: $shadow;
+    text-shadow: $shadow;
+}
+
+@mixin animate($animation) {
+    -moz-animation: $animation;
+    -webkit-animation: $animation;
+    animation: $animation;
+}
+
+// ##########
+// NAVIGATION
+// ##########
+
+.navbar-default {
+    background-color: transparent;
+    border: 0px;
+    min-height: 72px;
+    
+    .navbar-brand {
+        height: 72px;
+        
+        img {
+            height: 42px;
+        }
+    }
+    
+    .navbar-nav>li>a {
+        color: #000;
+        
+        @media(min-width: 768px) {
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+    }
+}
+
+// ###########
+// GRID LAYOUT
+// ###########
+
+.asili-grid {
+    position: relative;
+}
+
+.asili-grid-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.asili-grid-full-height {
+    height: 100vh;
+}
+
+.asili-grid-content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.asili-grid-content-image {
+    opacity: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    @include transition(opacity 1s);
+
+    img {
+        display: none;
+    }
+}
+
+.asili-grid-content-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text-wrapper {
+        margin: 2.5vw;
+    }
+}
+
+main.landscape {
+    .asili-grid-half {
+        flex-grow: 50;
+    }
+
+    .asili-grid-full-height .asili-grid-content-carousel .slick-slide {
+        height: 100vh;
+    }
+
+    .asili-grid-content-text {
+        .text-wrapper-right {
+            margin-right: 10vw;
+        }
+    }
+}
+
+main.portrait {
+    .asili-grid-half {
+        width: 100%;
+    }
+
+    .asili-grid-full-height .asili-grid-content-carousel .slick-slide {
+        height: 50vh;
+    }
+}
