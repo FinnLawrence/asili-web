@@ -64,6 +64,54 @@
             padding-bottom: 26px;
         }
     }
+    
+    .navbar-nav>li:hover, .navbar-nav>li:active {
+        color: #000;
+        background-color: #e7e7e7;
+    }
+}
+
+@media(min-width: 992px) {
+    .navbar-default {
+        min-height: 96px;
+        
+        .navbar-brand {
+            height: 96px;
+            
+            img {
+                height: 66px;
+            }
+        }
+        
+        .navbar-nav>li>a {
+            padding-top: 38px;
+            padding-bottom: 38px;
+        }
+    }
+}
+
+.dropdown {
+    
+    .dropdown-menu {
+        min-width: 0px;
+        width: 100%;
+        border: 0px;
+        padding: 0px;
+        background-color: #e7e7e7;
+        box-shadow: none;
+        
+        li>a {
+            padding: 3px 15px;
+        }
+    }
+    
+    .asili-dropdown-toggle:hover ~ .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu:hover {
+        display: block;
+    }
 }
 
 // ###########
