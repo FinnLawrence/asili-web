@@ -4,9 +4,10 @@ $(document).ready(function() {
     
     // Fire up carousels
     $('.asili-grid-content-carousel').slick({
-        arrows: false,
+        arrows: true,
         autoplay: true,
-        fade: true
+        fade: true,
+        dots: true
     });
 });
 

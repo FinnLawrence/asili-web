@@ -2,24 +2,50 @@
 layout: default
 title: Asili - Soap Stone
 description: TODO
+images:
+  - image_path: '/img/soap-stone/Copy of C043535-R1-08-9.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043535-R1-10-11.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043537-R1-19-19A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043537-R1-24-24A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043539-R1-16-16A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043539-R1-30-31A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043539-R1-35-36A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of Copy of IMG_0984.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/HAMISH_0071 copy.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/HAMISH_0607.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/IMG_0687.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Untitled Session2684 (1).jpg'
+    center: '50% 50%'
 ---
 
 <section class="asili-grid asili-grid-section asili-grid-full-height">
     <div class="asili-grid asili-grid-half">
         <div class="asili-grid-content asili-grid-content-carousel">
+            {% for image in page.images %}
             <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="/img/asili-03.jpg" onload="backgroundLoaded(this);">
+                <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
             </div>
-            <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="/img/asili-04.jpg" onload="backgroundLoaded(this);">
-            </div>
+            {% endfor %}
         </div>
     </div>
-    <div class="asili-grid asili-grid-half">
+    <div class="asili-grid asili-grid-half theme-bg">
         <div class="asili-grid-content asili-grid-content-text">
             <div class="text-wrapper text-wrapper-right">
-                <h3>Soap Stone</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium, nisi et egestas sollicitudin, dui metus finibus urna, a mattis neque sapien eget ligula. Integer lectus est, ultrices at libero non, pulvinar fringilla nibh. Phasellus erat leo, condimentum id egestas in, scelerisque id leo. Integer euismod volutpat blandit. Aliquam risus nibh, sagittis non lectus id, commodo aliquet elit. Nunc eu faucibus mauris, et gravida ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam eu iaculis enim, vitae tincidunt mi.</p>
+                <h4 class="section-title">Kisii soapstone, mined from the quarries in Western Kenya.</h4>
+                <p>Soapstone is a metamorphic rock that consists of the mineral talc, also commonly referred to as steatite, it is known for being soft and easy to work with.</p>
+                <p>Communities within Kisii have been using soapstone for generations, for many families, the carvings are their primary source of income.  Skills are passed down within families, some reaching three generations of carvers.  Each piece is individually hand crafted, from start to finish within a fair trade environment in Kisii.</p>
+                <p>Soapstone occurs in a number of beautiful natural colours ranging from soft whites to marbled pinks, and grey tones. The color is dependent on the minerals present in the soapstone.  Due to soapstone being a natural material, veining and colour variations occur, leaving each piece completely unique.</p>
             </div>
         </div>
     </div>

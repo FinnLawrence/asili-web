@@ -2,24 +2,29 @@
 layout: default
 title: Asili - Collaborations
 description: TODO
+images:
+  - image_path: '/img/soap-stone/Copy of C043539-R1-16-16A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043539-R1-30-31A.jpg'
+    center: '50% 50%'
+  - image_path: '/img/soap-stone/Copy of C043539-R1-35-36A.jpg'
+    center: '50% 50%'
 ---
 
 <section class="asili-grid asili-grid-section asili-grid-full-height">
     <div class="asili-grid asili-grid-half">
         <div class="asili-grid-content asili-grid-content-carousel">
+            {% for image in page.images %}
             <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="/img/asili-03.jpg" onload="backgroundLoaded(this);">
+                <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
             </div>
-            <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="/img/asili-04.jpg" onload="backgroundLoaded(this);">
-            </div>
+            {% endfor %}
         </div>
     </div>
-    <div class="asili-grid asili-grid-half">
+    <div class="asili-grid asili-grid-half theme-bg">
         <div class="asili-grid-content asili-grid-content-text">
             <div class="text-wrapper text-wrapper-right">
-                <h3>Our Collaborations</h3>
-                <p>Every ASILI collaboration:</p>
+                <h4 class="section-title">Every ASILI collaboration:</h4>
                 <ul>
                     <li><p>Begins with responsible material sourcing, as this forms a key chapter in a product’s story. By operating transparently, ASILI offers the design community an assurance of integrity.</p></li>
                     <li><p>Supports artisans in their trade and through this support, contributes to the preservation of culturally significant crafts. Our aim is to attract a new global market, reviving the neglected traditions and materials of East Africa.</p></li>
