@@ -77,6 +77,82 @@ html, body {
         color: #000;
         background-color: #e7e7e7;
     }
+
+    .navbar-toggle {
+        border-radius: 50%;
+        padding: 14px 10px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        background-color: black;
+        border: 0px;
+        @include transition(all 0.3s);
+
+        .icon-bar {
+            background-color: white;
+        }
+        
+        .mobile-expand {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 350px;
+            height: 350px;
+            background-color: black;
+            border-bottom-left-radius: 100%;
+            @include transition(all 0.3s);
+            z-index: -1;
+        }
+    }
+    
+    .navbar-toggle.collapsed {
+        .mobile-expand {
+            width: 0px;
+            height: 0px;
+        }
+    }
+
+    .navbar-toggle:focus, .navbar-toggle:hover {
+        background-color: #454545;
+    }
+
+    @media(max-width: 767px) {
+        .navbar-collapse {
+            text-align: right;
+            border: 0px;
+            box-shadow: none;
+        }
+        
+        .dropdown {
+            overflow: hidden;
+            
+            .dropdown-menu {
+                display: block;
+                position: static;
+                text-align: right;
+                background-color: transparent;
+            }
+            
+            .dropdown-menu > li > a {
+                color: white;
+            }
+            
+            .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+                background-color: transparent;
+            }
+        }
+        
+        .navbar-nav > li > a {
+            color: white;
+        }
+        
+        .navbar-nav > li:hover, .navbar-nav > li:active {
+            background-color: transparent;
+            
+            a {
+                color: white;
+            }
+        }
+    }
 }
 
 @media(min-width: 992px) {
@@ -217,7 +293,7 @@ h4.section-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     .caption {
         color: white;
     }
@@ -242,6 +318,7 @@ main.landscape {
 main.portrait {
     .asili-grid-half {
         width: 100%;
+        min-height: 50vh;
     }
 
     .asili-grid-full-height .asili-grid-content-carousel .slick-slide {
