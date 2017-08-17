@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: homepage
 title: Asili
 description: TODO
 ---
@@ -8,14 +8,25 @@ description: TODO
     <div class="asili-grid asili-grid-full-page">
         <div class="asili-grid-content asili-grid-content-video">
             <video autoplay loop id="video-background" muted plays-inline>
-                <source src="/video/IMG_1005.mp4" type="video/mp4">
+                <source src="/video/asili-homepage.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="centered-caption-wrapper">
-            <div class="caption">
-                <h1>Asili</h1>
-                <h4>essence, genesis, rise, root, source of something.</h4>
-            </div>
+        <div class="homepage-overlay homepage-overlay-right image-background fade-opacity">
+            <img src="/img/homepage/homepage-right.jpg" onload="backgroundLoaded(this);" data-position="50% 50%" data-lock-opacity="true">
+        </div>
+        <div class="homepage-overlay homepage-overlay-left image-background fade-opacity">
+            <img src="/img/homepage/homepage-left.jpg" onload="backgroundLoaded(this);" data-position="50% 80%" data-lock-opacity="true">
+        </div>
+        <div class="homepage-overlay centered-slash">
+            <span class="slash">/</span>
+        </div>
+        <div class="homepage-overlay left-logo">
+            <span class="left-logo-wrapper">
+            <img src="/img/logo-500.png">
+            </span>
+        </div>
+        <div class="homepage-overlay right-description">
+            <span class="description">/ ah - see - lee /<br>essence, rise, root, the source</span>
         </div>
     </div>
 </section>

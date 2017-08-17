@@ -51,6 +51,16 @@ html, body {
 // NAVIGATION
 // ##########
 
+@media(min-width: 768px) {
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+.navbar-header {
+    width: 100%;
+}
+
 .navbar-default {
     background-color: transparent;
     border: 0px;
@@ -64,25 +74,11 @@ html, body {
         }
     }
 
-    .navbar-nav>li>a {
-        color: #000;
-
-        @media(min-width: 768px) {
-            padding-top: 26px;
-            padding-bottom: 26px;
-        }
-    }
-
-    .navbar-nav>li:hover, .navbar-nav>li:active {
-        color: #000;
-        background-color: #e7e7e7;
-    }
-
     .navbar-toggle {
         border-radius: 50%;
         padding: 14px 10px;
-        margin-top: 14px;
-        margin-bottom: 14px;
+        margin-top: 20px;
+        margin-bottom: 8px;
         background-color: black;
         border: 0px;
         @include transition(all 0.3s);
@@ -90,68 +86,65 @@ html, body {
         .icon-bar {
             background-color: white;
         }
-        
+
+        .nav-links {
+            list-style-type: none;
+            padding-left: 0px;
+            position: absolute;
+            right: 0px;
+            top: 100%;
+            text-align: right;
+            @include transition(all 0.3s);
+            max-height: 200px;
+            margin: 0px;
+            overflow: hidden;
+
+            li {
+
+                a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    padding: 5px 10px;
+                    @include transition(all 0.3s);
+                }
+
+                a:hover {
+                    color: white;
+                    text-decoration: none;
+                    padding-right: 15px;
+                }
+            }
+        }
+
         .mobile-expand {
             position: absolute;
-            top: 0px;
-            right: 0px;
-            width: 350px;
-            height: 350px;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
             background-color: black;
-            border-bottom-left-radius: 100%;
+            border-radius: 50%;
             @include transition(all 0.3s);
+            @include transform(translate(-50%, -50%));
             z-index: -1;
         }
     }
-    
+
     .navbar-toggle.collapsed {
         .mobile-expand {
             width: 0px;
             height: 0px;
         }
+
+        .nav-links {
+            max-height: 0px;
+        }
     }
 
     .navbar-toggle:focus, .navbar-toggle:hover {
-        background-color: #454545;
-    }
-
-    @media(max-width: 767px) {
-        .navbar-collapse {
-            text-align: right;
-            border: 0px;
-            box-shadow: none;
-        }
-        
-        .dropdown {
-            overflow: hidden;
-            
-            .dropdown-menu {
-                display: block;
-                position: static;
-                text-align: right;
-                background-color: transparent;
-            }
-            
-            .dropdown-menu > li > a {
-                color: white;
-            }
-            
-            .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-                background-color: transparent;
-            }
-        }
-        
-        .navbar-nav > li > a {
-            color: white;
-        }
-        
-        .navbar-nav > li:hover, .navbar-nav > li:active {
-            background-color: transparent;
-            
-            a {
-                color: white;
-            }
-        }
+        background-color: black;
     }
 }
 
@@ -167,40 +160,127 @@ html, body {
             }
         }
 
-        .navbar-nav>li>a {
-            padding-top: 38px;
-            padding-bottom: 38px;
+        .navbar-toggle {
+            padding: 21px 15px;
+            margin-top: 28px;
+
+            .icon-bar {
+                width: 33px;
+                height: 3px;
+            }
+
+            .icon-bar+.icon-bar {
+                margin-top: 6px;
+            }
         }
     }
 }
 
-.dropdown {
+// ########
+// HOMEPAGE
+// ########
 
-    .dropdown-menu {
-        min-width: 0px;
-        width: 100%;
-        border: 0px;
-        padding: 0px;
-        background-color: #e7e7e7;
-        box-shadow: none;
+.homepage-overlay {
+    position: absolute;
+    z-index: 30;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
 
-        li>a {
-            padding: 3px 15px;
+.homepage-overlay.homepage-overlay-right {
+    left: 50%;
+}
+
+.homepage-overlay.homepage-overlay-left {
+    right: 50%;
+}
+
+.homepage-overlay.centered-slash {
+    z-index: 32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span.slash {
+        font-size: 48px;
+        color: black;
+    }
+}
+
+.homepage-overlay.left-logo {
+    right: 50%;
+    z-index: 28;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    span.left-logo-wrapper {
+        padding-right: 20px;
+        padding-bottom: 10px;
+        
+        img {
+            height: 64px;
         }
     }
+}
 
-    .asili-dropdown-toggle:hover ~ .dropdown-menu {
-        display: block;
+.homepage-overlay.right-description {
+    left: 50%;
+    z-index: 28;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    span.description {
+        padding-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
     }
+}
 
-    .dropdown-menu:hover {
-        display: block;
+.homepage {
+    .homepage-overlay-left, .homepage-overlay-right, .navbar-brand {
+        opacity: 0;
+    }
+}
+
+.homepage.frame-2 {
+    .homepage-overlay-right {
+        opacity: 1;
+    }
+}
+
+.homepage.frame-3 {
+    .homepage-overlay-right, .homepage-overlay-left, .navbar-brand {
+        opacity: 1;
+    }
+}
+
+.homepage.frame-4 {
+    .homepage-overlay-left, .navbar-brand {
+        opacity: 1;
     }
 }
 
 // #########
 // UTILITIES
 // #########
+
+
+.image-background {
+    background-size: cover;
+
+    img {
+        display: none;
+    }
+}
+
+.fade-opacity {
+    @include transition(opacity 1s);
+}
 
 .theme-bg {
     background-color: {{ site.color-background }};
@@ -281,21 +361,6 @@ h4.section-title {
         min-height: 100%;
         width: auto;
         height: auto;
-    }
-}
-
-.centered-caption-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .caption {
-        color: white;
     }
 }
 

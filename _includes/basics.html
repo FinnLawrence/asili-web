@@ -10,8 +10,11 @@
         if (bgPosition) {
             parent.style.backgroundPosition = bgPosition;
         }
+        var lockOpacity = element.dataset.lockOpacity;
+        if (!lockOpacity) {
+            parent.style.opacity = "1";
+        }
         parent.style.backgroundImage = url;
-        parent.style.opacity = "1";
     }
 </script>
 
