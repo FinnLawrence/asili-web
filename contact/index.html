@@ -13,7 +13,7 @@ description: TODO
         </div>
     </div>
     <div class="asili-grid asili-grid-third">
-        <div class="asili-grid-content asili-grid-content-text">
+        <div class="asili-grid-content asili-grid-content-text asili-grid-content-text-right">
             <div class="text-wrapper text-wrapper-right">
                 <form id="contact-form" class="asili-form" style="min-width: 275px;" method="post" action="/">
                     <h4 class="asili-form-title">Contact</h4>
@@ -80,6 +80,7 @@ description: TODO
     }
 
     function setResponse(formEl, request) {
+        console.log(request)
         if (request.status === 302) { // CloudCannon redirects on success
             formEl.className += " success";
         } else {

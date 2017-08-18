@@ -361,6 +361,14 @@ h4.section-title {
     }
 }
 
+.asili-grid-content-text-right {
+    justify-content: flex-start;
+}
+
+.asili-grid-content-text-left {
+    justify-content: flex-end;
+}
+
 .asili-grid-content-video {
     overflow: hidden;
 
