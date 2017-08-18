@@ -219,7 +219,7 @@ html, body {
     span.left-logo-wrapper {
         padding-right: 20px;
         padding-bottom: 10px;
-        
+
         img {
             height: 64px;
         }
@@ -269,6 +269,13 @@ html, body {
 // UTILITIES
 // #########
 
+main.portrait .hide-on-portrait {
+    display: none;
+}
+
+main.landscape .hide-on-landscape {
+    display: none;
+}
 
 .image-background {
     background-size: cover;
@@ -276,6 +283,10 @@ html, body {
     img {
         display: none;
     }
+}
+
+.responsive {
+    width: 100%;
 }
 
 .fade-opacity {
@@ -304,7 +315,7 @@ h4.section-title {
     flex-wrap: wrap;
     align-items: stretch;
 
-    .asili-grid-half {
+    .asili-grid {
         display: flex;
     }
 
@@ -338,6 +349,7 @@ h4.section-title {
 }
 
 .asili-grid-content-text {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -369,6 +381,14 @@ main.landscape {
         width: 50vw;
     }
 
+    .asili-grid-third {
+        width: 33.3333vw;
+    }
+
+    .asili-grid-two-thirds {
+        width: 66.6666vw;
+    }
+
     .asili-grid-full-height .asili-grid-content-carousel .slick-slide {
         height: 100vh;
     }
@@ -377,17 +397,155 @@ main.landscape {
         .text-wrapper-right {
             margin-right: 10vw;
         }
+
+        .text-wrapper-left {
+            margin-left: 10vw;
+        }
     }
 }
 
 main.portrait {
-    .asili-grid-half {
+    .asili-grid-half, .asili-grid-third, .asili-grid-two-thirds {
         width: 100%;
         min-height: 50vh;
     }
 
     .asili-grid-full-height .asili-grid-content-carousel .slick-slide {
         height: 50vh;
+    }
+}
+
+// #####
+// FORMS
+// #####
+
+form {
+
+    label {
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 0px;
+    }
+
+    input, label, textarea {
+        font-size: 13px;
+    }
+    
+    .btn {
+        text-transform: uppercase;
+        border-radius: 0px;
+        background-color: transparent;
+        border: 0px;
+        padding: 7px 0px 0px 0px;
+        border-bottom: 2px solid black;
+        border-color: {{ site.color-text }};
+    }
+
+    .form-group.form-group-text {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid black;
+        border-color: {{ site.color-text }};
+
+        label {
+            color: {{ site.color-text-light }};
+        }
+
+        input, textarea {
+            box-shadow: none;
+            border: 0px;
+            border-radius: 0px;
+            padding: 7px 10px;
+        }
+    }
+
+    .form-group.form-group-radio {
+        
+        label {
+            color: {{ site.color-text-light }};
+        }
+        
+        .radio-label {
+            height: 34px;
+            line-height: 34px;
+            border-bottom: 2px solid black;
+            border-color: {{ site.color-text }};
+        }
+
+        .radio+.radio {
+            margin-top: 0px;
+        }
+
+        .radio {
+            position: relative;
+            display: inline-block;
+            height: 34px;
+            margin: 0px;
+
+            input[type="radio"] {
+                margin: 0px;
+                opacity: 0;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+            }
+
+            label {
+                margin-left: 10px;
+                padding: 0px;
+                height: 34px;
+                line-height: 34px;
+                @include transition(color 0.3s);
+            }
+
+            input[type="radio"]:checked+label { 
+                color: {{ site.color-text }};
+            }
+        }
+    }
+}
+
+.asili-form {
+    .asili-form-pane {
+        max-height: 0px;
+        overflow: hidden;
+        @include transition(max-height 0.3s);
+    }
+    
+    .asili-form-pane.asili-form-content {
+        max-height: 500px;
+    }
+}
+
+.asili-form.working {
+    .asili-form-pane.asili-form-content {
+        max-height: 0px;
+    }
+    
+    .asili-form-pane.asili-form-working {
+        max-height: 500px;
+    }
+}
+
+.asili-form.success {
+    .asili-form-pane.asili-form-content, .asili-form-pane.asili-form-working {
+        max-height: 0px;
+    }
+    
+    .asili-form-pane.asili-form-success {
+        max-height: 500px;
+    }
+}
+
+.asili-form.error {
+    .asili-form-pane.asili-form-content, .asili-form-pane.asili-form-working, .asili-form-pane.asili-form-success{
+        max-height: 0px;
+    }
+    
+    .asili-form-pane.asili-form-error {
+        max-height: 500px;
     }
 }
 

@@ -2,31 +2,106 @@
 layout: default
 title: Asili - Contact Us
 description: TODO
-images:
-  - image_path: '/img/contact/C043535-R1-23-24.jpg'
-    center: '50% 50%'
-  - image_path: '/img/contact/C043538-R1-04-6.jpg'
-    center: '50% 50%'
-  - image_path: '/img/contact/C043541-R1-32-32A.jpg'
-    center: '50% 50%'
 ---
 
 <section class="asili-grid asili-grid-section asili-grid-full-height">
-    <div class="asili-grid asili-grid-half">
-        <div class="asili-grid-content asili-grid-content-carousel">
-            {% for image in page.images %}
-            <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
+    <div class="asili-grid asili-grid-two-thirds hide-on-portrait">
+        <div class="asili-grid-content asili-grid-content-text">
+            <div class="text-wrapper text-wrapper-left">
+                <img class="responsive" src="/img/contact-page.jpg">
             </div>
-            {% endfor %}
         </div>
     </div>
-    <div class="asili-grid asili-grid-half theme-bg">
+    <div class="asili-grid asili-grid-third">
         <div class="asili-grid-content asili-grid-content-text">
             <div class="text-wrapper text-wrapper-right">
-                <h4 class="section-title">Interested in working with us to create something new?</h4>
-                <p>FORM GOES HERE<br><br>FORM GOES HERE<br><br>FORM GOES HERE</p>
+                <form id="contact-form" class="asili-form" style="min-width: 275px;" method="post" action="/">
+                    <h4 class="asili-form-title">Contact</h4>
+                    <div class="asili-form-pane asili-form-content">
+                        <p class="asili-form-description">If you are interested in our products get in touch via the form below:</p>
+                        <div class="form-group form-group-text">
+                            <label for="enquiryName">Name</label>
+                            <input id="enquiryName" type="text" class="form-control" name="Name">
+                        </div>
+                        <div class="form-group form-group-radio">
+                            <label class="radio-label">Enquiry:</label>
+                            <div class="radio">
+                                <input type="radio" name="Enquiry" id="enquiryRadio1" value="Retail" checked>
+                                <label for="enquiryRadio1">Retail</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="Enquiry" id="enquiryRadio2" value="Wholesale">
+                                <label for="enquiryRadio2">Wholesale</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="Enquiry" id="enquiryRadio3" value="Press">
+                                <label for="enquiryRadio3">Press</label>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-text">
+                            <label for="enquiryEmail">Email</label>
+                            <input id="enquiryEmail" type="email" class="form-control" name="Email">
+                        </div>
+                        <div class="form-group form-group-text">
+                            <label for="enquiryMessage">Message</label>
+                            <textarea id="enquiryMessage" rows="1" class="form-control" name="Message"></textarea>
+                        </div>
+                        <input type="hidden" name="_to" value="finn.lawrence@gmail.com">
+                        <input type="text" name="_gotcha" style="display: none;">
+
+                        <div class="form-group form-group-button">
+                            <input class="btn" type="submit" value="Submit">
+                        </div>
+                    </div>
+                    <div class="asili-form-pane asili-form-working">
+                        <p>Working</p>
+                    </div>
+                    <div class="asili-form-pane asili-form-success">
+                        <p class="asili-form-description">Your message has been received - we'll be in touch shortly.</p>
+                    </div>
+                    <div class="asili-form-pane asili-form-error">
+                        <p>Error</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
+<script>
+    function getFormDataString(formEl) {
+        var formData = new FormData(formEl),
+            data = [];
+
+        for (var keyValue of formData) {
+            data.push(encodeURIComponent(keyValue[0]) + "=" + encodeURIComponent(keyValue[1]));
+        }
+
+        return data.join("&");
+    }
+
+    function setResponse(formEl, request) {
+        if (request.status === 302) { // CloudCannon redirects on success
+            formEl.className += " success";
+        } else {
+            formEl.className += " error";
+        }
+    }
+
+    // Fetch the form element
+    var formEl = document.getElementById("contact-form");
+
+    // Override the submit event
+    formEl.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        formEl.className += " working";
+
+        var request = new XMLHttpRequest();
+
+        request.addEventListener("load", setResponse(formEl, request));
+
+        request.open(formEl.method, formEl.action);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.send(getFormDataString(formEl));
+    });
+</script>
