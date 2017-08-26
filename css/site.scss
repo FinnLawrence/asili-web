@@ -79,7 +79,7 @@ html, body {
         padding: 14px 10px;
         margin-top: 20px;
         margin-bottom: 8px;
-        background-color: black;
+        background-color: {{ site.color-haiti }};
         border: 0px;
         @include transition(all 0.3s);
 
@@ -189,7 +189,7 @@ html, body {
         .navbar-brand {
             height: 96px;
             position: relative;
-            top: 50px;
+            top: 60px;
             left: -50px;
 
             img {
