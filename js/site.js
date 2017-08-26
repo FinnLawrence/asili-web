@@ -10,8 +10,19 @@ $(document).ready(function() {
         dots: true
     });
 
-    $('#navigation-toggle').click(function () {
-        $('#navigation-toggle').toggleClass("collapsed");
+    $('#navigation-toggle .tap-target').click(function () {
+        nav.resetNav();
+        $('#navigation-toggle').toggleClass("closed");
+    });
+    
+    $(nav.activatorSelector).click(function(event) {
+        event.preventDefault();
+        nav.showChildNav($(this));
+    });
+    
+    $(nav.backSelector).click(function(event) {
+        event.preventDefault();
+        nav.resetNav();
     });
 });
 
@@ -19,6 +30,26 @@ $(window).resize(function() {
     // Set portrait vs landscape
     page.setAspect();
 });
+
+const nav = {
+    parentSelector: ".nav-parent",
+    activatorSelector: ".submenu",
+    childSelector: ".nav-child",
+    backSelector: ".back-link",
+    showChildNav: function(activator) {
+        var parentNav = $(nav.parentSelector);
+        var childNavID = activator.attr("href");
+        var childNav = $(childNavID);
+        parentNav.addClass("child-open");
+        childNav.addClass("open");
+    },
+    resetNav: function() {
+        var parentNav = $(nav.parentSelector);
+        var childNav= $(nav.childSelector);
+        parentNav.removeClass("child-open");
+        childNav.removeClass("open");
+    }
+}
 
 const page = {
     elementSelector: "main",

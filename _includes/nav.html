@@ -1,21 +1,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button id="navigation-toggle" type="button" class="navbar-toggle collapsed">
+            <div id="navigation-toggle" class="navbar-toggle closed">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-                <ul class="nav-links">
-                    <li><a href="/aspiration/">Aspiration</a></li>
-                    <li><a href="/materials/horn/">Horn</a></li>
-                    <li><a href="/materials/soap-stone/">Soap Stone</a></li>
-                    <li><a href="/materials/olive-wood/">Olive Wood</a></li>
-                    <li><a href="/collaborations/">Collaborations</a></li>
-                    <li><a href="/contact/">Contact</a></li>
-                </ul>
+                <a class="tap-target"></a>
+                <div class="nav-links-wrapper">
+                    <ul class="nav-links nav-parent">
+                        <li><a href="/aspiration/">Aspiration</a></li>
+                        <li><a href="#materials" class="submenu">Materials</a></li>
+                        <li><a href="/collaborations/">Collaborations</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                    <ul id="materials" class="nav-links nav-child">
+                        <li><a class="back-link">&lt; Back</a></li>
+                        <li><a href="/materials/horn/">Waste Horn</a></li>
+                        <li><a href="/materials/soap-stone/">Soap Stone</a></li>
+                        <li><a href="/materials/olive-wood/">Olive Wood</a></li>
+                    </ul>
+                </div>
                 <div class="mobile-expand"></div>
-            </button>
+            </div>
             <a class="navbar-brand fade-opacity" href="/">
                 <img src="/img/logo-500.png">
             </a>
