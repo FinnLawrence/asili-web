@@ -138,7 +138,7 @@ html, body {
             top: 0px;
             right: 0px;
             @include transform(translateX(100%));
-            
+
             .back-link {
                 cursor: pointer;
             }
@@ -158,7 +158,7 @@ html, body {
             left: 50%;
             width: 400px;
             height: 400px;
-            background-color: black;
+            background-color: {{ site.color-haiti }};
             border-radius: 50%;
             @include transition(all 0.3s);
             @include transform(translate(-50%, -50%));
@@ -188,6 +188,9 @@ html, body {
 
         .navbar-brand {
             height: 96px;
+            position: relative;
+            top: 50px;
+            left: -50px;
 
             img {
                 height: 66px;
@@ -239,7 +242,10 @@ html, body {
 
     span.slash {
         font-size: 48px;
-        color: black;
+        color: {{ site.color-haiti }};
+        @media(min-width: 992px) {
+            font-size: 72px;
+        }
     }
 }
 
@@ -256,6 +262,9 @@ html, body {
 
         img {
             height: 64px;
+            @media(min-width: 992px) {
+                height: 96px;
+            }
         }
     }
 }
@@ -271,7 +280,10 @@ html, body {
         padding-left: 20px;
         font-size: 16px;
         font-weight: bold;
-        color: black;
+        color: {{ site.color-haiti }};
+        @media(min-width: 992px) {
+            font-size: 24px;
+        }
     }
 }
 
