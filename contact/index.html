@@ -5,10 +5,12 @@ description: TODO
 ---
 
 <section class="asili-grid asili-grid-section asili-grid-full-height">
-    <div class="asili-grid asili-grid-two-thirds hide-on-portrait">
-        <div class="asili-grid-content asili-grid-content-text">
-            <div class="text-wrapper text-wrapper-left">
-                <img class="responsive" src="/img/contact.jpg">
+    <div class="asili-grid asili-grid-two-thirds">
+        <div class="asili-grid-content asili-grid-content-image-inset">
+            <div class="inset-image-wrapper inset-image-wrapper-left">
+                <div class="inset-image">
+                    <img src="/img/contact.jpg" onload="backgroundLoaded(this);">
+                </div>
             </div>
         </div>
     </div>
@@ -46,7 +48,7 @@ description: TODO
                             <label for="enquiryMessage">Message</label>
                             <textarea id="enquiryMessage" rows="1" class="form-control" name="Message"></textarea>
                         </div>
-                        <input type="hidden" name="_to" value="finn.lawrence@gmail.com">
+                        <input type="hidden" name="_to" value="info@asilidesign.co">
                         <input type="text" name="_gotcha" style="display: none;">
 
                         <div class="form-group form-group-button">

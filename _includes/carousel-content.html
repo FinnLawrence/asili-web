@@ -1,0 +1,15 @@
+{% for image in page.images %}
+{% if image.inset %}
+<div class="asili-grid-content-image-inset asili-grid-content-carousel-slide">
+    <div class="inset-image-wrapper inset-image-wrapper-left">
+        <div class="inset-image">
+            <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="asili-grid-content-image asili-grid-content-carousel-slide">
+    <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
+</div>
+{% endif %}
+{% endfor %}

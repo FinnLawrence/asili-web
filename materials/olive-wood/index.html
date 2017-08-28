@@ -3,46 +3,27 @@ layout: default
 title: Asili - Olive Wood
 description: TODO
 images:
-  - image_path: '/img/olive-wood/Copy of C043534-R1-12-14.jpg'
+  - image_path: '/img/olive-wood-1.jpg'
     center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-13-15.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-16-18.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-17-19.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-19-21.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-20-22.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-24-26.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/Copy of C043534-R1-32-34.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/HAMISH_0167.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/HAMISH_0232.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/HAMISH_0597.jpg'
-    center: '50% 50%'
-  - image_path: '/img/olive-wood/IMG_8364 (3).jpg'
-    center: '50% 50%'
+    inset: false
+  - image_path: '/img/olive-wood-2.jpg'
+    center: '20% 40%'
+    inset: false
+  - image_path: '/img/olive-wood-3.jpg'
+    center: '50% 30%'
+    inset: false
 ---
 
 <section class="asili-grid asili-grid-section asili-grid-full-height">
     <div class="asili-grid asili-grid-half">
         <div class="asili-grid-content asili-grid-content-carousel">
-            {% for image in page.images %}
-            <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
-            </div>
-            {% endfor %}
+            {% include carousel-content.html %}
         </div>
     </div>
     <div class="asili-grid asili-grid-half theme-bg">
         <div class="asili-grid-content asili-grid-content-text">
             <div class="text-wrapper text-wrapper-right">
-                <h4 class="section-title">Reclaimed Olive Wood</h4>
+                <h2 class="section-title">Reclaimed Olive Wood</h2>
                 <p>Sourced from Kenya’s Rift Valley, the wild wood has been reclaimed from the abandoned stumps of the wild Olive trees that have been cut down to make room for local farmland. Instead of going to waste, the stumps and roots are then dug up to clear the land to provide suitable conditions for planting crops. These stumps and roots are re-purposed by a small Kenyan based team. </p>
                 <p>The team saw potential in the discarded wood and could not let it go to waste as fire-wood.  After getting permit to reclaim these stumps, work began. The wood is dried for 2-3 years, before the team repurposes the wood, creating beautiful carvings, furniture and other items. The unique grain, rich colour and texture of the olive wood stumps make these items one of a kind.</p>
                 <p>Olive wood is very hard and is prized for its durability, colour, high combustion temperature and interesting grain patterns. Because of the commercial importance of the fruit, and the slow growth and relatively small size of the tree, olive wood and its products are relatively expensive. The yellow or light greenish-brown wood is often finely veined with a darker tint; being very hard and close-grained, it is valued by woodworkers.</p>
