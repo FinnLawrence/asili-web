@@ -3,22 +3,30 @@ layout: default
 title: Asili - Collaborations
 description: TODO
 images:
-  - image_path: '/img/soap-stone/Copy of C043539-R1-16-16A.jpg'
+  - image_path: '/img/collaboration-1.jpg'
     center: '50% 50%'
-  - image_path: '/img/soap-stone/Copy of C043539-R1-30-31A.jpg'
+    inset: true
+  - image_path: '/img/collaboration-2.jpg'
     center: '50% 50%'
-  - image_path: '/img/soap-stone/Copy of C043539-R1-35-36A.jpg'
+    inset: false
+  - image_path: '/img/collaboration-3.jpg'
     center: '50% 50%'
+    inset: true
+  - image_path: '/img/collaboration-4.jpg'
+    center: '50% 50%'
+    inset: false
+  - image_path: '/img/collaboration-5.jpg'
+    center: '50% 50%'
+    inset: false
+  - image_path: '/img/collaboration-6.jpg'
+    center: '50% 50%'
+    inset: false
 ---
 
 <section class="asili-grid asili-grid-section asili-grid-full-height">
     <div class="asili-grid asili-grid-half">
         <div class="asili-grid-content asili-grid-content-carousel">
-            {% for image in page.images %}
-            <div class="asili-grid-content-image asili-grid-content-carousel-slide">
-                <img src="{{ image.image_path }}" onload="backgroundLoaded(this);" data-position="{{ image.center }}">
-            </div>
-            {% endfor %}
+            {% include carousel-content.html %}
         </div>
     </div>
     <div class="asili-grid asili-grid-half theme-bg">
