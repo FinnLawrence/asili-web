@@ -189,8 +189,8 @@ html, body {
         .navbar-brand {
             height: 96px;
             position: relative;
-            top: 60px;
-            left: -50px;
+            top: 6vh;
+            left: -2.5vw;
 
             img {
                 height: 66px;
@@ -343,6 +343,16 @@ main.landscape .hide-on-landscape {
     background-color: {{ site.color-background }};
 }
 
+h2.section-title {
+    font-weight: 700;
+    text-transform: lowercase;
+    margin-bottom: 15px;
+}
+
+.text-wrapper-right h2.section-title {
+    text-align: right;
+}
+
 h4.section-title {
     margin-bottom: 25px;
 }
@@ -391,6 +401,31 @@ h4.section-title {
 
     img {
         display: none;
+    }
+}
+
+.asili-grid-content-image-inset {
+    min-height: 100vh;
+    display: flex;
+
+    .inset-image-wrapper {
+        padding: 2.5vw;
+        padding-top: 100px;
+        width: 100%;
+        display: flex;
+
+        .inset-image {
+            opacity: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            @include transition(opacity 1s);
+            flex-grow: 1;
+
+            img {
+                display: none;
+            }
+        }
     }
 }
 
@@ -454,6 +489,16 @@ main.landscape {
 
         .text-wrapper-left {
             margin-left: 10vw;
+        }
+    }
+    
+    .asili-grid-content-image-inset {
+        .inset-image-wrapper-right {
+            padding-right: 10vw;
+        }
+        
+        .inset-image-wrapper-left {
+            padding-left: 10vw;
         }
     }
 }
