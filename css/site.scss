@@ -39,6 +39,15 @@
     animation: $animation;
 }
 
+@font-face {
+    font-family: 'UntitledSansBlack';
+    src: url('fonts/UntitledSansBlack.eot');
+    src: url('fonts/UntitledSansBlack.eot') format('embedded-opentype'),
+        url('fonts/UntitledSansBlack.woff') format('woff'),
+        url('fonts/UntitledSansBlack.ttf') format('truetype'),
+        url('fonts/UntitledSansBlack.svg#UntitledSansBlack') format('svg');
+}
+
 // #######
 // GENERAL
 // #######
@@ -397,6 +406,10 @@ h4.section-title {
     min-height: 100vh;
 }
 
+.asili-grid-half-height {
+    min-height: 50vh;
+}
+
 .asili-grid-content {
     position: absolute;
     top: 0px;
@@ -671,6 +684,103 @@ form {
 
     .asili-form-pane.asili-form-error {
         max-height: 500px;
+    }
+}
+
+// ##################
+// LANDING PAGE STUFF
+// ##################
+
+.landing-page {
+    min-height: 100vh;
+
+    @media(min-width: 768px) {
+        padding: 17vh 10vw 0px 8vw;
+    }
+
+    a {
+        color: #454545;
+    }
+
+    a:hover {
+        color: #454545;
+        text-decoration: none;
+    }
+
+    section.asili-grid {
+        display: flex;
+        align-items: center;
+    }
+
+    .landing-page-left {
+        width: 27.5vw;
+        padding-right: 7.5vw;
+
+        .logo-link {
+            img {
+                max-width: 7vw;
+            }
+        }
+
+        .title {
+            margin-top: 7vh;
+            font-family: 'UntitledSansBlack', sans-serif;
+            font-weight: lighter;
+            font-size: 1.5vw;
+            line-height: 1.3;
+        }
+
+        .description {
+            margin-top: 10vh;
+            font-size: 1vw;
+        }
+    }
+
+    .landing-page-right {
+        flex-grow: 1;
+
+        .carousel-wrapper {
+            position: relative;
+            height: 64vh;
+        }
+
+        .slick-list, .slick-track {
+            height: 64vh;
+        }
+
+        .social-footer {
+            padding-top: 2vh;
+
+            .social-icons {
+                display: inline-block;
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+                border-radius: 4px;
+                background-color: #E8E8E8;
+                padding: 5px;
+
+                li {
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    line-height: 24px;
+                    text-align: center;
+                }
+            }
+
+            .contact-link {
+                display: inline-block;
+                float: right;
+                padding: 5px 0px;
+
+                a {
+                    height: 24px;
+                    line-height: 24px;
+                    font-family: 'UntitledSansBlack', sans-serif;
+                }
+            }
+        }
     }
 }
 
