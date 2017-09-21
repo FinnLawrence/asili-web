@@ -1,12 +1,10 @@
 title: 'Asili'
-description: 'TODO'
+description: 'ASILI is a collaborative design platform with social impact that guides collaborations between contemporary designers and East African artisans.'
 
 url: 'http://asili.co'
 
-instagram: 'TODO'
-facebook: 'TODO'
-linkedin: 'TODO'
-twitter: 'TODO'
+link-instagram: 'https://www.instagram.com/asili.co/'
+link-facebook: 'https://www.facebook.com/asili.co/'
 
 color-background: '#e0dad3'
 color-text: '#000000'
