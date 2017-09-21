@@ -40,3 +40,21 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+
+<!-- Facebook Open Graph - see https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:image" content="{{ site.url }}{{ page.social_image }}">
+<meta property="og:image:type" content="image/jpg">
+<meta property="og:image:width" content="{{ page.social_image_width }}">
+<meta property="og:image:height" content="{{ page.social_image_height }}">
+<!-- end:open graph -->
+
+<!-- Twitter Cards - see https://dev.twitter.com/cards/markup -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="{{ site.url }}{{ page.social_image }}">
+<!-- end:twitter cards -->
